@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Modal Dialog</title>
+	<style>
+		button {
+			padding: 10px 40px;
+		}
+
+		.container {
+			display: none;
+			justify-content: center;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.5);
+		}
+
+		.modal {
+			position: absolute;
+			top: 20%;
+			width: 600px;
+			background: white;
+			border: 5px solid cornflowerblue;
+		}
+
+		.modal h3 {
+			margin: 0;
+			padding: 8px;
+			background: cornflowerblue;
+			color: white;
+		}
+
+		.close {
+			float: right;
+			color: pink;
+			cursor: pointer;
+		}
+
+		.content {
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Click Show Modal</h1>
+	<button>Show Modal</button>
+
+	<div class="container">
+		<div class="modal">
+			<h3>Modal Title <span class="close">&times;</span></h3>
+			<div class="content">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, enim iure repellat exercitationem in ratione excepturi libero necessitatibus saepe a?
+			</div>
+		</div>
+	</div>
+
+	<script>
+		document.querySelector("button").onclick = function() {
+			document.querySelector(".container").style.display = "flex"
+		}
+
+		document.querySelector(".close").onclick = function() {
+			document.querySelector(".container").style.display = "none"
+		}
+	</script>
+</body>
+</html>

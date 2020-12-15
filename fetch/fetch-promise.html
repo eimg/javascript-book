@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fetch</title>
+</head>
+<body>
+	<p>
+		See result in browser console...
+	</p>
+
+	<script>
+		fetch("https://api.covid19api.com/summary")
+
+		.then(res => res.json())
+
+		.then(data => {
+			const global = data.Global
+			const allCountries = data.Countries
+			const myanmar = allCountries.find(c => c.Country === "Myanmar")
+
+			console.log("Global:", global, "Myanmar:", myanmar)
+		})
+	</script>
+</body>
+</html>

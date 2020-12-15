@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dropdown</title>
+	<style>
+		a {
+			text-decoration: none;
+		}
+
+		.dropdown {
+			position: relative;
+		}
+
+		.menu {
+			position: absolute;
+			width: 200px;
+			border: 1px solid #ddd;
+			background: #efefef;
+			display: none;
+		}
+
+		.menu a {
+			display: block;
+			padding: 15px;
+			border-bottom: 1px solid #ddd;
+		}
+	</style>
+</head>
+<body>
+	<h1>Click Dropdown Menu</h1>
+	<div class="dropdown">
+		<a href="#" class="toggle">Dropdown Menu ▾</a>
+		<div class="menu">
+			<a href="#">Item One</a>
+			<a href="#">Item Two</a>
+			<a href="#">Item Three</a>
+		</div>
+	</div>
+
+	<script>
+		document.querySelector(".toggle").onclick = function() {
+			if(document.querySelector(".menu").style.display === "block") {
+				document.querySelector(".menu").style.display = "none"
+			} else {
+				document.querySelector(".menu").style.display = "block"
+			}
+		}
+	</script>
+</body>
+</html>

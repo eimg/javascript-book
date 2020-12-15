@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tab</title>
+	<style>
+		.bar {
+			display: flex;
+			background: chocolate;
+			padding: 10px 10px 0 10px;
+			list-style: none;
+			margin: 0;
+		}
+
+		.tab {
+			background: white;
+			padding: 8px 40px;
+			margin-right: 10px;
+			cursor: pointer;
+		}
+
+		.content {
+			padding: 20px;
+			border: 1px solid chocolate;
+			border-top: 0 none;
+			min-height: 200px;
+		}
+
+		#tab2 {
+			opacity: 0.5;
+		}
+
+		#content2 {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<ul class="bar">
+		<li class="tab" id="tab1">Tab One</li>
+		<li class="tab" id="tab2">Tab Two</li>
+	</ul>
+	<div class="content" id="content1">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quae eaque fuga iusto quam possimus.
+	</div>
+	<div class="content" id="content2">
+		Voluptatem officia minima nobis, id impedit harum illo perferendis? Necessitatibus cupiditate reprehenderit amet. Voluptatum, beatae!
+	</div>
+
+	<script>
+		document.querySelector("#tab1").onclick = function() {
+			document.querySelector("#tab1").style.opacity = 1;
+			document.querySelector("#tab2").style.opacity = 0.5;
+			document.querySelector("#content1").style.display = "block";
+			document.querySelector("#content2").style.display = "none";
+		}
+
+		document.querySelector("#tab2").onclick = function() {
+			document.querySelector("#tab1").style.opacity = 0.5;
+			document.querySelector("#tab2").style.opacity = 1;
+			document.querySelector("#content1").style.display = "none";
+			document.querySelector("#content2").style.display = "block";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Box Menu</title>
+	<style>
+		.box {
+			border: 1px solid teal;
+			margin-bottom: 10px;
+			width: 300px;
+		}
+
+		.box h3 {
+			cursor: pointer;
+			margin: 0;
+			padding: 8px;
+			color: white;
+			background: teal;
+		}
+
+		.box h3.close {
+			background: cadetblue;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<h3>Box Title</h3>
+		<ul>
+			<li>Item One</li>
+			<li>Item Two</li>
+			<li>Item Three</li>
+		</ul>
+	</div>
+	<div class="box">
+		<h3>Box Title</h3>
+		<ul>
+			<li>Item One</li>
+			<li>Item Two</li>
+			<li>Item Three</li>
+		</ul>
+	</div>
+	<div class="box">
+		<h3>Box Title</h3>
+		<ul>
+			<li>Item One</li>
+			<li>Item Two</li>
+			<li>Item Three</li>
+		</ul>
+	</div>
+
+	<script>
+		document.querySelectorAll(".box h3").forEach(title => {
+			title.onclick = function() {
+				title.classList.toggle("close")
+
+				if(title.nextElementSibling.style.display === "none") {
+					title.nextElementSibling.style.display = "block"
+				} else {
+					title.nextElementSibling.style.display = "none"
+				}
+			}
+		})
+	</script>
+</body>
+</html>
